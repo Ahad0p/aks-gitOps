@@ -1,39 +1,50 @@
 # Terraform
+.terraform/
+.terraform.lock.hcl
 *.tfstate
 *.tfstate.*
 *.tfplan
-.terraform/
-.terraform.lock.hcl
+.terraform.tfstate.lock.info
 
-# Backend configuration files (contains sensitive storage account info)
+# Variable / sensitive files
+*.tfvars
+*.tfvars.json
 backend.tf
 */backend.tf
+secrets/
+var.sh
 
-# Backup files
+# Override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Crash logs
+crash.log
+crash.*.log
+
+# Logs / temp
+*.log
+*.tmp
 *.backup
+
+# Credentials / keys
+*.pem
+*.key
 
 # Binaries
 bin/
 */bin/
 kubelogin*
 
-# IDE and OS files
+# IDE / OS
 .vscode/
 .idea/
 .DS_Store
 thumbs.db
+.terraformrc
+terraform.rc
 
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-
-# Sensitive files
-secrets/
-*.pem
-*.key
+# Keep Terraform code
 !*.tf
-
-
-var.sh
